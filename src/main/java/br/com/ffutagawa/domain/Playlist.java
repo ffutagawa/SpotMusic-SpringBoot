@@ -24,7 +24,7 @@ public class Playlist {
     @Column(nullable = false)
     private String descricao;
 
-    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "playlist", cascade = CascadeType.MERGE)
     private List<Musica> musicas;
 
     public long getId() {

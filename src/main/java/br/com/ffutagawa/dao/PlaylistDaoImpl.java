@@ -15,7 +15,7 @@ public class PlaylistDaoImpl implements  PlaylistDao{
 
     @Override
     public void salvar(Playlist playlist) {
-        em.persist(playlist);
+       em.persist(playlist);
     }
 
     @Override
@@ -31,6 +31,7 @@ public class PlaylistDaoImpl implements  PlaylistDao{
     @Override
     public void atualizar(Playlist playlist) {
         em.merge(playlist);
+
     }
 
     @Override

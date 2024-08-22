@@ -17,8 +17,6 @@ public class Musica {
     @Column(nullable = false, length = 50)
     private String titulo;
 
-    @NotBlank
-    @Size(min = 2, max = 50)
     @Column(nullable = false, length = 50)
     private String banda;
 
