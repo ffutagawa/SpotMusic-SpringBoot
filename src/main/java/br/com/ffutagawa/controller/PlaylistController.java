@@ -2,6 +2,7 @@ package br.com.ffutagawa.controller;
 
 import br.com.ffutagawa.domain.Playlist;
 import br.com.ffutagawa.service.PlaylistService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,18 +28,18 @@ public class PlaylistController {
     }
 
     @GetMapping("/cadastro")
-    public String preSalvar(@ModelAttribute("playlist")Playlist playlist){
+    public String preSalvar(@ModelAttribute("playlist") Playlist playlist) {
         return "/playlist/add";
     }
 
     @PostMapping("/salvar")
-    public String salvar (@ModelAttribute("playlist") Playlist playlist, BindingResult result, RedirectAttributes attr){
-        if (result.hasErrors()){
+    public String salvar(@Valid @ModelAttribute("playlist") Playlist playlist, BindingResult result, RedirectAttributes attr) {
+        if (result.hasErrors()) {
             return "/playlist/add";
         }
 
         playlistService.salvar(playlist);
-        attr.addFlashAttribute("mensagem", "Playlista criada com sucesso.");
+        attr.addFlashAttribute("mensagem", "Playlist criada com sucesso.");
         return "redirect:/playlists/listar";
     }
 

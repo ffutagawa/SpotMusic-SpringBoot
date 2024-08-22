@@ -1,6 +1,8 @@
 package br.com.ffutagawa.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 import java.util.Objects;
@@ -13,9 +15,12 @@ public class Playlist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Size(min = 2, max = 60)
+    @NotBlank
     @Column(nullable = false, length = 60)
     private String nome;
 
+    @NotBlank
     @Column(nullable = false)
     private String descricao;
 

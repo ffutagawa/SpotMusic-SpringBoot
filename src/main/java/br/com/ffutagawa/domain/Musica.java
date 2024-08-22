@@ -1,6 +1,8 @@
 package br.com.ffutagawa.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "musicas")
@@ -10,9 +12,13 @@ public class Musica {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotBlank
+    @Size(min = 2, max = 50)
     @Column(nullable = false, length = 50)
     private String titulo;
 
+    @NotBlank
+    @Size(min = 2, max = 50)
     @Column(nullable = false, length = 50)
     private String banda;
 
