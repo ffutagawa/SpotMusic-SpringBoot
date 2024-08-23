@@ -39,6 +39,6 @@ public class PlaylistServiceImpl implements PlaylistService{
 
     @Override
     public void excluir(long id) {
-
+        playlistDao.excluir(id);
     }
 }

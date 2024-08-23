@@ -14,13 +14,13 @@ public class Musica {
 
     @NotBlank
     @Size(min = 2, max = 50)
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String titulo;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String banda;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int nota;
 
     @ManyToOne

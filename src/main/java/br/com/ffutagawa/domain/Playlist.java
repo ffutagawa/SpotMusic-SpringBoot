@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Playlist {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Size(min = 2, max = 60)
